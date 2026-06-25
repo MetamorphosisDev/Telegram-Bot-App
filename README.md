@@ -52,6 +52,12 @@ Benefits:
 * Faster development workflow
 * No need to manually restart the bot after every code change
 
+Require Bot:
+
+```bot
+https://t.me/BotFather
+```
+
 ## Installation
 
 Clone the repository:
@@ -68,12 +74,6 @@ npm install
 ```
 
 ## Environment Variables
-
-Require Bot:
-
-```bot
-https://t.me/BotFather
-```
 
 Create a `.env` file in the project root:
 
