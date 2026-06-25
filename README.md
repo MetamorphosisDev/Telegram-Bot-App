@@ -1,162 +1,109 @@
-# Telegram Bot App
-![Node.js](https://img.shields.io/badge/Node.js-v25.6.1-339933?logo=node.js&logoColor=white)&nbsp;
-![node-telegram-bot-api](https://img.shields.io/badge/node--telegram--bot--api-v1.1.2-26A5E4?logo=telegram&logoColor=white)&nbsp;
-![dotenv](https://img.shields.io/badge/dotenv-v17.4.2-ECD53F?logo=dotenv&logoColor=black)&nbsp;
-![nodemon](https://img.shields.io/badge/nodemon-v3.1.14-76D04B?logo=nodemon&logoColor=white)&nbsp;
+<div align="center">
 
-A simple Telegram bot built with Node.js and `node-telegram-bot-api`. This project serves as a learning foundation for developing Telegram bots, handling messages, managing environment variables, and building scalable bot features.
+# Telegram Bot App
+
+A clean, minimalist, and scalable foundation for building Telegram bots using Node.js.
+
+![Node.js](https://img.shields.io/badge/Node.js-v25.6.1-339933?logo=node.js&logoColor=white)
+![node-telegram-bot-api](https://img.shields.io/badge/node--telegram--bot--api-v1.1.2-26A5E4?logo=telegram&logoColor=white)
+![dotenv](https://img.shields.io/badge/dotenv-v17.4.2-ECD53F?logo=dotenv&logoColor=black)
+![nodemon](https://img.shields.io/badge/nodemon-v3.1.14-76D04B?logo=nodemon&logoColor=white)
+
+</div>
+
+---
 
 ## Features
 
-* Receive messages from Telegram users
-* Send automatic replies
-* Polling-based update handling
-* Environment variable support with dotenv
-* Easy project structure for future development
+- **Ready to Code:** Clean boilerplate to start developing immediately.
+- **Polling-Based:** Seamlessly receives messages and handles updates.
+- **Environment Secure:** Safely manages tokens via `.env`.
+- **Developer Friendly:** Live-reloading enabled via Nodemon.
 
-## Technologies Used
+## 🛠 Tech Stack
 
-### Node.js
+- **[Node.js](https://nodejs.org/)** - JavaScript runtime environment.
+- **[node-telegram-bot-api](https://github.com/yagop/node-telegram-bot-api)** - Core framework for Telegram API interactions.
+- **[dotenv](https://github.com/motdotla/dotenv)** - Secure environment variable management.
+- **[nodemon](https://nodemon.io/)** - Auto-restart tool for rapid development.
 
-JavaScript runtime used to run the application.
+## Getting Started
 
-### node-telegram-bot-api (v1.1.2)
+### 1. Prerequisites
+Ensure you have Node.js installed. You will also need a bot token from [@BotFather](https://t.me/BotFather) on Telegram.
 
-Library for interacting with the Telegram Bot API.
-
-Main capabilities:
-
-* Receive messages
-* Send messages
-* Handle commands
-* Manage inline keyboards
-* Process callback queries
-* Build Telegram bot applications
-
-### dotenv (v17.4.2)
-
-Loads environment variables from a `.env` file into `process.env`.
-
-Used to securely store sensitive information such as:
-
-* Bot tokens
-* API keys
-* Database credentials
-
-### nodemon (v3.1.1)
-
-Development tool that automatically restarts the application whenever source files change.
-
-Benefits:
-
-* Faster development workflow
-* No need to manually restart the bot after every code change
-
-Require Bot:
-
-```bot
-https://t.me/BotFather
-```
-
-## Installation
-
-Clone the repository:
+### 2. Installation
+Clone this repository and install the dependencies:
 
 ```bash
 git clone <repository-url>
 cd telegram-bot-app
-```
-
-Install dependencies:
-
-```bash
 npm install
 ```
 
-## Environment Variables
-
-Create a `.env` file in the project root:
-
-```env
-TOKEN_BOT=YOUR_TELEGRAM_BOT_TOKEN
-```
-
-Example:
+### 3. Configuration
+Create a `.env` file in the root directory and add your bot token. **Never commit this file.**
 
 ```env
 TOKEN_BOT=123456789:ABCDEFxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-## Run the Application
+### 4. Running the Bot
 
-Start the bot:
-
+**Development Mode (Auto-reloads on save):**
 ```bash
 npm run bot
 ```
 
-Or directly with Node.js:
-
+**Production Mode:**
 ```bash
 node main.js
+```
+
+## Usage Example
+
+Here is the minimal setup included in `main.js`:
+
+```javascript
+require("dotenv").config();
+const TelegramBot = require("node-telegram-bot-api");
+
+// Initialize bot with polling
+const bot = new TelegramBot(process.env.TOKEN_BOT, { polling: true });
+
+// Listen for incoming messages
+bot.on("message", (msg) => {
+    const chatId = msg.chat.id;
+    bot.sendMessage(chatId, "Hello! I am ready to assist you.");
+});
 ```
 
 ## Project Structure
 
 ```text
 telegram-bot-app/
-│
-├── .env
+├── node_modules/
+├── .env                # Ignored by git
 ├── .gitignore
-├── main.js
+├── main.js             # Entry point
 ├── package.json
-├── package-lock.json
-└── node_modules/
+└── package-lock.json
 ```
 
-## Example Code
+## 🗺 Roadmap
 
-```javascript
-require("dotenv").config()
-const { TelegramBot } = require("node-telegram-bot-api")
+Future enhancements planned for this foundation:
 
-const bot = new TelegramBot(process.env.TOKEN_BOT, {
-    polling: true
-})
+- [ ] Implement command handlers (e.g., `/start`, `/help`).
+- [ ] Add inline keyboards and callback query processing.
+- [ ] Integrate a database (MongoDB/PostgreSQL) for user management.
+- [ ] Set up a modular architecture (separating routes, controllers, and services).
+- [ ] Add a Winston/Morgan logging system.
 
-bot.on("message", (message) => {
-    bot.sendMessage(message.chat.id, "Hello!")
-})
-```
+## 🛡 Security Note
 
-## Security Notes
+- Keep your `TOKEN_BOT` private.
+- Ensure `.env` is listed in your `.gitignore` file before pushing to GitHub.
 
-Never commit the following files:
-
-```text
-.env
-```
-
-Ensure `.gitignore` contains:
-
-```gitignore
-node_modules/
-.env
-```
-
-Bot tokens should always be stored in environment variables and never hardcoded in source files.
-
-## Future Improvements
-
-* Command handlers
-* Inline keyboards
-* Callback queries
-* User management
-* Database integration
-* Logging system
-* Modular architecture
-* Deployment support
-
-## License
-
-This project is intended for educational and learning purposes.
+---
+*This project is built for educational and learning purposes.*
