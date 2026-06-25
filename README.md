@@ -1,5 +1,6 @@
 # Telegram Bot App
-![npm](https://img.shields.io/npm/v/node-telegram-bot-api) ![npm](https://img.shields.io/npm/v/dotenv) ![npm](https://img.shields.io/npm/v/nodemon)
+![Node.js](https://img.shields.io/badge/Node.js-v25.6.1-339933?logo=node.js&logoColor=white) ![node-telegram-bot-api](https://img.shields.io/badge/node--telegram--bot--api-v1.1.2-26A5E4?logo=telegram&logoColor=white) ![dotenv](https://img.shields.io/badge/dotenv-v17.4.2-ECD53F?logo=dotenv&logoColor=black) ![nodemon](https://img.shields.io/badge/nodemon-v3.1.1-76D04B?logo=nodemon&logoColor=white)
+
 A simple Telegram bot built with Node.js and `node-telegram-bot-api`. This project serves as a learning foundation for developing Telegram bots, handling messages, managing environment variables, and building scalable bot features.
 
 ## Features
