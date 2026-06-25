@@ -69,6 +69,12 @@ npm install
 
 ## Environment Variables
 
+Require Bot:
+
+```bot
+https://t.me/BotFather
+```
+
 Create a `.env` file in the project root:
 
 ```env
