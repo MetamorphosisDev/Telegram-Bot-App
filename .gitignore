@@ -1,9 +1,6 @@
-# Environment variables (contains sensitive data such as bot token)
 .env
 
-# Installed dependencies (generated automatically by npm)
 node_modules/
 
-# Note Project (Optional)
 noteApp/
 
