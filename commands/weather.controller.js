@@ -4,7 +4,7 @@ async function getWeather(telegramClient, callback, match) {
     const chatId = callback.chat.id;
     const cityName = match[1];
 
-    // Pastikan proses env dibaca dengan benar
+    // ENV Required
     const WEATHER_ENDPOINT = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${process.env.OPENWEATHER_KEY}&units=metric&lang=id`;
 
     try {
