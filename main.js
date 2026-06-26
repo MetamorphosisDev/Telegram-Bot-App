@@ -1,12 +1,16 @@
-require("dotenv").config()
-const { TelegramBot } = require("node-telegram-bot-api")
+require("dotenv").config({ quiet: true });
 
-const option_System = { polling: true }
+const { TelegramBot } = require("node-telegram-bot-api");
+const prefix = require("./utils/prefix_Settings");
 
-const telegramClient = new TelegramBot(process.env.TOKEN_BOT, option_System)
+// Import Commands
+const { getWeather } = require("./commands/weather.controller");
 
-telegramClient.on("message", (callback) => {
-    const id = callback.from.id
-    telegramClient.sendMessage(id, callback.text)
-})
+const telegramClient = new TelegramBot(process.env.TOKEN_BOT, {
+    polling: true
+});
 
+
+telegramClient.onText(prefix("cuaca"), (callback, match) => {
+    getWeather(telegramClient, callback, match);
+});

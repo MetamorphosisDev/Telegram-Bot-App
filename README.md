@@ -20,7 +20,7 @@ A clean, minimalist, and scalable foundation for building Telegram bots using No
 - **Environment Secure:** Safely manages tokens via `.env`.
 - **Developer Friendly:** Live-reloading enabled via Nodemon.
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - **[Node.js](https://nodejs.org/)** - JavaScript runtime environment.
 - **[node-telegram-bot-api](https://github.com/yagop/node-telegram-bot-api)** - Core framework for Telegram API interactions.
@@ -90,7 +90,7 @@ telegram-bot-app/
 └── package-lock.json
 ```
 
-## 🗺 Roadmap
+## Roadmap
 
 Future enhancements planned for this foundation:
 
@@ -100,7 +100,7 @@ Future enhancements planned for this foundation:
 - [ ] Set up a modular architecture (separating routes, controllers, and services).
 - [ ] Add a Winston/Morgan logging system.
 
-## 🛡 Security Note
+## Security Note
 
 - Keep your `TOKEN_BOT` private.
 - Ensure `.env` is listed in your `.gitignore` file before pushing to GitHub.
