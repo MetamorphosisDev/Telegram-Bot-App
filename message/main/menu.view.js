@@ -2,12 +2,13 @@ function menuRender() {
     return `🤖 *Telegram Bot Menu*
 
 📋 *Informasi*
-• \`.menu\` ㅤㅤㅤㅤ: Menampilkan menu bot
+• \`.menu\` ㅤㅤㅤㅤ    : Menampilkan menu bot
 • \`.help\` ㅤㅤㅤㅤㅤ: Bantuan penggunaan bot
 • \`.ping\` ㅤㅤㅤㅤㅤ: Cek status bot
 
-🌦 *Cuaca & Lokasi*
+🌦 *GEO*
 • \`.cuaca <kota>\` : Informasi cuaca suatu kota
+• \`.gempa\`                  : Informasi gempa terbaru
 
 *Fitur baru akan ditambahkan pada pembaruan berikutnya.*
 

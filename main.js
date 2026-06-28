@@ -8,6 +8,7 @@ const prefix = require("./utils/prefix/prefix_Settings")
 
 // Import View Basic
 const menuRender = require("./message/main/menu.view")
+const repairRender = require("./message/main/repairView")
 
 // Import Commands
 const { getWeather } = require("./commands/weather.controller");
@@ -34,15 +35,20 @@ telegramClient.onText(prefix("menu"), (callback) => {
     telegramClient.sendMessage(
         callback.chat.id,
         menuRender(),
-        {
-            parse_mode: "Markdown"
-        }
+        { parse_mode: "Markdown" }
     );
 });
 
 telegramClient.onText(prefix("ping"), callback => {
     pingBot(telegramClient, callback)
 })
+
+telegramClient.onText(prefix("help"), (callback => {
+    telegramClient.sendMessage(
+        callback.chat.id, repairRender(),
+        { parse_mode: "Markdown" }
+    )
+}))
 
 // Error testing
 telegramClient.on("polling_error", (error) => {
